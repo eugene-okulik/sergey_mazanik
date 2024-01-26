@@ -1,6 +1,3 @@
-from abc import abstractmethod
-
-
 class Book:
     pages_material = 'Paper'
     has_text = True
