@@ -1,3 +1,6 @@
+from abc import abstractmethod
+
+
 class Book:
     pages_material = 'Paper'
     has_text = True
@@ -16,6 +19,9 @@ class Book:
         else:
             print(f'Name: {self.book_name}, Author: {self.author}, Pages: {self.pages_count}, '
                   f'Material: {self.pages_material}')
+
+    def set_is_received(self, status_received: bool):
+        self.is_reserved = status_received
 
 
 class Textbook(Book):
@@ -50,8 +56,8 @@ second_textbook = Textbook('INFORMATION COMMUNICATION TECHNOLOGY', 'Dixit J.B.',
                            '1-4919-3936-2', False, 'Information Technology',
                            11, True)
 
-third_book.is_reserved = True
-second_textbook.is_reserved = True
+third_book.set_is_received(True)
+second_textbook.set_is_received(True)
 
 books = first_book, second_book, third_book, forth_book, fifth_book
 textbooks = first_textbook, second_textbook
