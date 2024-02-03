@@ -82,9 +82,10 @@ SELECT s.name, s.second_name, m.value
 FROM students s
 JOIN marks m
 ON s.id = m.student_id
-WHERE s.id = {student_id}
+WHERE s.id = %s
 '''
-cursor.execute(select_query_1)
+values = (student_id,)
+cursor.execute(select_query_1, values)
 data = cursor.fetchall()
 print(data)
 print()
@@ -94,9 +95,10 @@ SELECT s.name, s.second_name, b.title
 FROM students s
 JOIN books b
 ON s.id = b.taken_by_student_id
-WHERE s.id = {student_id}
+WHERE s.id = %s
 '''
-cursor.execute(select_query_2)
+values = (student_id,)
+cursor.execute(select_query_2, values)
 data = cursor.fetchall()
 print(data)
 print()
@@ -116,9 +118,10 @@ JOIN lessons l
 ON m.lesson_id = l.id
 JOIN subjets s2
 ON l.subject_id  = s2.id
-WHERE s.id = {student_id}
+WHERE s.id = %s
 '''
-cursor.execute(select_query_3)
+values = (student_id,)
+cursor.execute(select_query_3, values)
 data = cursor.fetchall()
 print(data)
 
