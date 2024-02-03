@@ -26,7 +26,7 @@ with open(current_file_path, newline='') as csv_file:
     for row in file_data:
         data_csv.append(row)
 
-select_query = f'''
+select_query = '''
 SELECT s.name AS name, s.second_name AS second_name, g.title AS group_title, b.title AS book_title,
         s2.title AS subject_title, l.title AS lesson_title, m.value AS mark_value
 FROM students s

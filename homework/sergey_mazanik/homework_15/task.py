@@ -77,7 +77,7 @@ mark_second_lesson_second_subject_id = cursor.lastrowid
 
 db.commit()
 
-select_query_1 = f'''
+select_query_1 = '''
 SELECT s.name, s.second_name, m.value
 FROM students s
 JOIN marks m
@@ -90,7 +90,7 @@ data = cursor.fetchall()
 print(data)
 print()
 
-select_query_2 = f'''
+select_query_2 = '''
 SELECT s.name, s.second_name, b.title
 FROM students s
 JOIN books b
@@ -103,7 +103,7 @@ data = cursor.fetchall()
 print(data)
 print()
 
-select_query_3 = f'''
+select_query_3 = '''
 SELECT s.name AS student_name, s.second_name AS student_surname, b.title AS book_title, g.title AS group_title,
         g.start_date AS statr_course, g.end_date AS end_course, s2.title AS subject_title, l.title AS lesson_title,
         m.value AS mark
