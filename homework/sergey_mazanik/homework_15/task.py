@@ -77,31 +77,33 @@ mark_second_lesson_second_subject_id = cursor.lastrowid
 
 db.commit()
 
-select_query_1 = f'''
+select_query_1 = '''
 SELECT s.name, s.second_name, m.value
 FROM students s
 JOIN marks m
 ON s.id = m.student_id
-WHERE s.id = {student_id}
+WHERE s.id = %s
 '''
-cursor.execute(select_query_1)
+values = (student_id,)
+cursor.execute(select_query_1, values)
 data = cursor.fetchall()
 print(data)
 print()
 
-select_query_2 = f'''
+select_query_2 = '''
 SELECT s.name, s.second_name, b.title
 FROM students s
 JOIN books b
 ON s.id = b.taken_by_student_id
-WHERE s.id = {student_id}
+WHERE s.id = %s
 '''
-cursor.execute(select_query_2)
+values = (student_id,)
+cursor.execute(select_query_2, values)
 data = cursor.fetchall()
 print(data)
 print()
 
-select_query_3 = f'''
+select_query_3 = '''
 SELECT s.name AS student_name, s.second_name AS student_surname, b.title AS book_title, g.title AS group_title,
         g.start_date AS statr_course, g.end_date AS end_course, s2.title AS subject_title, l.title AS lesson_title,
         m.value AS mark
@@ -116,9 +118,10 @@ JOIN lessons l
 ON m.lesson_id = l.id
 JOIN subjets s2
 ON l.subject_id  = s2.id
-WHERE s.id = {student_id}
+WHERE s.id = %s
 '''
-cursor.execute(select_query_3)
+values = (student_id,)
+cursor.execute(select_query_3, values)
 data = cursor.fetchall()
 print(data)
 
