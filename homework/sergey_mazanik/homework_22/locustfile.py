@@ -5,6 +5,7 @@ from random import randint
 class ObjectUser(HttpUser):
     object_id = None
     year = randint(2010, 2024)
+    created_objects = []
 
     @task
     def create_object(self):
@@ -22,6 +23,7 @@ class ObjectUser(HttpUser):
             }
         )
         self.object_id = response.json()['id']
+        self.created_objects.append(self.object_id)
 
     @task
     def get_all_objects(self):
@@ -30,5 +32,7 @@ class ObjectUser(HttpUser):
     @task
     def get_one_object(self):
         self.client.get(f'/objects/{self.object_id}')
-        self.client.delete(f'/objects/{self.object_id}')
-        self.client.close()
+
+    def on_stop(self):
+        for created_object in self.created_objects:
+            self.client.delete(f'/objects/{created_object}')
