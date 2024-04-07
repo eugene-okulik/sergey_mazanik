@@ -67,7 +67,7 @@ def test_fill_form(driver):
     wait = WebDriverWait(driver, 5)
     wait.until(EC.visibility_of_element_located(ADVERTISE_FROM_HEADER))
 
-    driver.execute_script(f"window.scrollTo(0, 500)")
+    driver.execute_script('window.scrollTo(0, 500)')
 
     first_name_input = driver.find_element(*FIRST_NAME_INPUT)
     first_name_input.send_keys(test_first_name)
