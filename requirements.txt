@@ -16,6 +16,7 @@ Flask-Login==0.6.3
 gevent==24.2.1
 geventhttpclient==2.0.12
 greenlet==3.0.3
+h11==0.14.0
 idna==3.6
 iniconfig==2.0.0
 itsdangerous==2.1.2
@@ -24,9 +25,11 @@ locust==2.24.0
 MarkupSafe==2.1.5
 msgpack==1.0.8
 mysql-connector-python==8.3.0
+outcome==1.3.0.post0
 packaging==24.0
 pluggy==1.4.0
 psutil==5.9.8
+PySocks==1.7.1
 pytest==8.1.1
 pytest-xdist==3.5.0
 python-dateutil==2.8.2
@@ -34,8 +37,15 @@ python-dotenv==1.0.1
 pyzmq==25.1.2
 requests==2.31.0
 roundrobin==0.0.4
+selenium==4.19.0
 six==1.16.0
+sniffio==1.3.1
+sortedcontainers==2.4.0
+trio==0.25.0
+trio-websocket==0.11.1
+typing_extensions==4.11.0
 urllib3==2.2.1
 Werkzeug==3.0.1
+wsproto==1.2.0
 zope.event==5.0
 zope.interface==6.2
