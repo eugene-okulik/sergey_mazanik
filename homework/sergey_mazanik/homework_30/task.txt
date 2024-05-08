@@ -1,0 +1,21 @@
+Задание №2:
+Go to first line in file: g  <  ESC-<
+Go to last line in file: G  >  ESC->
+Forward one window: f  ^F  ^V  SPACE
+Forward one line: e  ^E  j  ^N  CR
+Backward one line: y  ^Y  k  ^K  ^P
+Search forward for matching line: /pattern
+Search backward for matching line: ?pattern
+Repeat previous search: n
+Repeat previous search in reverse direction: N
+
+Задание №3:
+/dev/null: "c" - символьное устройство
+/dev/zero: "c" - символьное устройство
+/dev/sda: not found
+/dev/tty: "c" - символьное устройство
+/root: "d" - каталог
+/etc/passwd: "-" - обычный файл
+/proc/mounts: "l" - символьная ссылка
+/bin/ls: "-" - обычный файл
+/bin/zcat: "-" - обычный файл
